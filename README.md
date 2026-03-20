@@ -37,6 +37,8 @@ Drop this file in your repo root. Customize the bracketed fields. Your agent now
 
 System prompts tell the agent how to behave. COVENANT.md tells the human what the agent is hiding.
 
+The name is deliberate. A covenant is stronger than a contract — it's a binding obligation that holds even when no one is watching. That's exactly what agent governance requires.
+
 ## Why Not Just a System Prompt?
 
 System prompts are invisible to the user. They govern agent behavior but provide zero transparency about *what the agent chose not to say*. COVENANT.md is a plain-text contract that lives in the repo where humans can read it, audit it, version it, and hold the agent accountable. You can't audit what you can't see.
@@ -85,9 +87,22 @@ Use AGENTS.md to describe your agents. Use COVENANT.md to bind them.
 
 See the [`examples/`](./examples) directory:
 
+- `coding-assistant.md` — General-purpose AI coding assistant with fabrication hard stops
 - `code-reviewer.md` — Enterprise code review agent with security escalation protocol
 - `support-agent.md` — Customer support agent with billing-aware rejection logging
 - `personal-assistant.md` — Personal life management agent with emotional boundary constraints
+
+## Making Your Agent Read It
+
+Add this to your agent's system prompt or initialization:
+
+```
+Before responding, read COVENANT.md in the project root.
+Operate within its constraints. Log withheld observations
+to the rejection log path specified in the file.
+```
+
+That's it. The agent reads the file, follows the constraints, documents what it hides. No runtime, no SDK, no dependencies.
 
 ## Contributing
 

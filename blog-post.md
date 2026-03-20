@@ -4,17 +4,13 @@ Every AI agent you use is hiding things from you.
 
 Not maliciously. By design. Your support agent noticed a billing error but didn't mention it because it wasn't related to the ticket. Your code review bot skipped three auto-generated files and never told you which ones. Your personal assistant saw that you haven't opened the health tracker in two weeks and decided — based on some internal heuristic you've never seen — to stay quiet about it.
 
-The agent made a judgment call. It filtered. It suppressed. And nobody documented what got filtered or why.
-
-This is the problem COVENANT.md solves.
+Agent drift isn't a bug. It's the default behavior of any system that makes decisions without documenting them.
 
 ## The gap nobody's filling
 
-The AI agent ecosystem has guardrails. NeMo, Guardrails AI, dozens of prompt injection defenses — all focused on input/output filtering. We have AGENTS.md for declaring what agents exist and how to build them. We have system prompts that tell agents how to behave.
+We have guardrails for input/output filtering. We have AGENTS.md for declaring what agents exist and how to build them. We have system prompts that tell agents how to behave.
 
-But system prompts are invisible to the user. They govern agent behavior while providing zero transparency about what the agent chose not to say. And the longer an agent runs — across sessions, across contexts, across the slow accumulation of inferred patterns — the more its hidden decisions compound.
-
-Agent drift isn't a bug. It's the default behavior of any system that makes decisions without documenting them.
+But system prompts are invisible to the user. They govern agent behavior while providing zero transparency about what the agent chose not to say. And the longer an agent runs — across sessions, across contexts, across the slow accumulation of inferred patterns — the more its hidden decisions compound. Nobody documents what got filtered or why.
 
 ## What COVENANT.md is
 
@@ -88,10 +84,10 @@ This sounds soft. It isn't. It's the hardest constraint in the spec. It kills da
 
 The spec is at [github.com/covenantmd/covenant](https://github.com/covenantmd/covenant). It's MIT-licensed, under 200 lines, and designed so you can create a COVENANT.md for your agent in fifteen minutes.
 
-There's a copy-paste template at the top of the README. Three example covenants — a code reviewer, a support agent, and a personal assistant — show what the spec looks like applied to real agents.
+There's a copy-paste template at the top of the README. Four example covenants — a coding assistant, a code reviewer, a support agent, and a personal assistant — show what the spec looks like applied to real agents.
 
 Drop a COVENANT.md in your repo. Make your agent document what it's hiding. The first time you read a rejection log and realize your agent has been silently filtering something important, you'll understand why this matters.
 
-An agent without a grace protocol will still function. It may not be worth functioning with.
+Every agent you deploy is already making these decisions — what to surface, what to suppress, what to infer, when to stay silent. Right now, those decisions are invisible, undocumented, and unauditable. That's not a feature. It's negligence with a friendly interface.
 
-Your agent is already making these decisions. The question is whether anyone's writing them down.
+Drop a COVENANT.md in your repo. Start with the rejection log. The rest will follow.
