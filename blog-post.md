@@ -86,8 +86,6 @@ The spec is at [github.com/covenantmd/covenant](https://github.com/covenantmd/co
 
 There's a copy-paste template at the top of the README. Four example covenants — a coding assistant, a code reviewer, a support agent, and a personal assistant — show what the spec looks like applied to real agents.
 
-Drop a COVENANT.md in your repo. Make your agent document what it's hiding. The first time you read a rejection log and realize your agent has been silently filtering something important, you'll understand why this matters.
-
 Every agent you deploy is already making these decisions — what to surface, what to suppress, what to infer, when to stay silent. Right now, those decisions are invisible, undocumented, and unauditable. That's not a feature. It's negligence with a friendly interface.
 
 Drop a COVENANT.md in your repo. Start with the rejection log. The rest will follow.
